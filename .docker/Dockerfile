@@ -8,16 +8,16 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o agent-service ./cmd/main.go
+RUN go build -o backend ./cmd/main.go
 
 # --- RUN STAGE ---
 FROM alpine:latest AS release
 
-COPY --from=builder /app/agent-service /app/agent-service/
-COPY config.yaml /etc/agent-service/
+COPY --from=builder /app/backend /app/backend/
+COPY config.yaml /etc/backend/
 
-WORKDIR /app/agent-service/
+WORKDIR /app/backend/
 
-EXPOSE 8080
+EXPOSE 8081
 
-CMD ["./agent-service"]
+CMD ["./backend"]
