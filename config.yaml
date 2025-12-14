@@ -1,0 +1,20 @@
+kafka:
+  addr: "localhost:9092"
+  frame_task_topic: "video-frames-tasks"
+  detection_result_topic: "detection-results"
+  detection_result_group: "backend-service-group"
+
+http:
+  addr: ":8080"
+  use_tls: false
+  cert_file: ""
+  key_file: ""
+  upload_dir: "./uploads"
+
+cameras:
+  - id: "cam-001"
+    latitude: 55.7558
+    longitude: 37.6173
+  - id: "cam-002"
+    latitude: 59.9343
+    longitude: 30.3351
