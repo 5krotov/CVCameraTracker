@@ -1,7 +1,7 @@
 package backend
 
 import (
-	"agent-service/internal/config"
+	"backend/internal/config"
 	"bufio"
 	"bytes"
 	"context"

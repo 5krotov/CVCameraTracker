@@ -1,8 +1,8 @@
 package http
 
 import (
-	"agent-service/internal/config"
-	"agent-service/internal/service/backend"
+	"backend/internal/config"
+	"backend/internal/service/backend"
 	"context"
 	"encoding/json"
 	"fmt"

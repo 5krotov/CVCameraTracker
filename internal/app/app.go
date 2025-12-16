@@ -1,9 +1,9 @@
 package app
 
 import (
-	"agent-service/internal/config"
-	"agent-service/internal/http"
-	"agent-service/internal/service/backend"
+	"backend/internal/config"
+	"backend/internal/http"
+	"backend/internal/service/backend"
 	"context"
 	"log"
 	"os"

@@ -1,15 +1,15 @@
 package main
 
 import (
-	"agent-service/internal/app"
-	"agent-service/internal/config"
+	"backend/internal/app"
+	"backend/internal/config"
 	"flag"
 	"log"
 )
 
 func main() {
 	var cfgPath string
-	flag.StringVar(&cfgPath, "config", "/etc/agent-service/config.yaml", "path to config file")
+	flag.StringVar(&cfgPath, "config", "/etc/backend/config.yaml", "path to config file")
 	flag.Parse()
 
 	cfg := config.NewConfig()

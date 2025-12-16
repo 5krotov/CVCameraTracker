@@ -1,5 +1,5 @@
 kafka:
-  addr: "localhost:9092"
+  addr: "kafka:9092"
   frame_task_topic: "video-frames-tasks"
   detection_result_topic: "detection-results"
   detection_result_group: "backend-service-group"

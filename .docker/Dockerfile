@@ -20,4 +20,4 @@ WORKDIR /app/backend/
 
 EXPOSE 8081
 
-CMD ["./backend"]
+CMD ["./main"]

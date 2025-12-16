@@ -15,7 +15,7 @@ services:
     ports:
       - "2181:2181"
     environment:
-      ZOOKEEPER_JVMFLAGS: "-Xmx2g -Xms2g" # Allocate 2GB heap memory
+      ZOOKEEPER_JVMFLAGS: "-Xmx2g -Xms2g"
     networks:
       - kafka-network
 
