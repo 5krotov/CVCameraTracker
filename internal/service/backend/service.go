@@ -78,13 +78,12 @@ func NewVideoProcessingService(
 		framesDir: framesDir,
 	}
 
-	// Uncomment this for real usage
-	// go func() {
-	// 	err := svc.consumeDetectionResults(context.Background())
-	// 	if err != nil {
-	// 		logger.Error("Failed to consume detection results", zap.Error(err))
-	// 	}
-	// }()
+	go func() {
+		err := svc.consumeDetectionResults(context.Background())
+		if err != nil {
+			logger.Error("Failed to consume detection results", zap.Error(err))
+		}
+	}()
 
 	return svc
 }
