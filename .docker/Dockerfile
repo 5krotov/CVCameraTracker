@@ -16,6 +16,8 @@ FROM alpine:latest AS release
 COPY --from=builder /app/backend /app/backend/
 COPY config.yaml /etc/backend/
 
+RUN apk add --no-cache ffmpeg
+
 WORKDIR /app/backend/
 
 EXPOSE 8081
