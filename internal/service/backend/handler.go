@@ -96,8 +96,6 @@ func (vps *VideoProcessingService) GetDetectionResult() (map[string][]ObjectDete
 		}
 		vps.logger.Warnf("Service not ready. Pending frames: %d/%d (%d%% complete)",
 			vps.numberNotReadyFrames, vps.totalFrames, percentage)
-
-		return nil, fmt.Errorf("VideoProcessing service is not ready: ready percentage %d %%", percentage)
 	}
 
 	vps.mu.Lock()
@@ -107,14 +105,14 @@ func (vps *VideoProcessingService) GetDetectionResult() (map[string][]ObjectDete
 
 	// If resultPath is already populated, return it (caching behavior?)
 	// Note: If you want to allow re-generation, remove this check or add a flag.
-	if len(vps.resultPath) != 0 {
-		vps.logger.Debug("Returning cached resultPath")
-		return vps.resultPath, nil
-	}
+	//if len(vps.resultPath) != 0 {
+	//	vps.logger.Debug("Returning cached resultPath")
+	//	return vps.resultPath, nil
+	//}
 
 	if len(vps.detectionResults) == 0 {
 		vps.logger.Warn("No detection results available to process")
-		return nil, nil // Or error?
+		return nil, fmt.Errorf("VideoProcessing service is not ready") // Or error?
 	}
 
 	vps.logger.Debug("Sorting detection results by timestamp...")
