@@ -21,6 +21,7 @@ type HTTPConfig struct {
 	CertFile  string `yaml:"cert_file"`
 	KeyFile   string `yaml:"key_file"`
 	UploadDir string `yaml:"upload_dir"`
+	FramesDir string `yaml:"frames_dir"`
 }
 
 type Camera struct {

@@ -31,7 +31,7 @@ func (*App) Run(cfg config.Config) {
 	if err != nil {
 		log.Fatalf("failed to create Kafka sync producer: %s", err.Error())
 	}
-	service := backend.NewVideoProcessingService(cfg, producer, cfg.Cameras, "./frames/")
+	service := backend.NewVideoProcessingService(cfg, producer, cfg.Cameras, cfg.HTTP.FramesDir)
 	server := http.NewMediaServer(cfg.HTTP, service)
 
 	stop := make(chan os.Signal, 1)
